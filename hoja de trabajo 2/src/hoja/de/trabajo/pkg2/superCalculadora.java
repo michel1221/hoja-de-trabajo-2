@@ -16,8 +16,8 @@ public class superCalculadora implements Calculadora {
 	public int contSignos;
 	public int contNums;
 	public int largoCad;
-	public stackVector<Integer> obj;
-	public stackVector<String> objStr;
+	public StackVector<Integer> obj;
+	public StackVector<String> objStr;
 	public String cadena;
 	public int a;
 	public int b;
@@ -27,8 +27,8 @@ public class superCalculadora implements Calculadora {
 		
 		contSignos =0;
 		contNums = 0;
-		obj= new stackVector();
-		objStr= new stackVector();
+		obj= new StackVector();
+		objStr= new StackVector();
 		largoCad=0;
 		cadena= "";
 		numCambiar = 0;
@@ -41,9 +41,7 @@ public class superCalculadora implements Calculadora {
 		largoCad=cadena.length();
 	}
 	public void meterVector (){
-		for (int i=1;i<=largoCad;i++){
-			objStr.push(cadena.substring(i,i+1));
-		}
+		largoCad=cadena.length();
 	}
 	
 	public boolean calcularVector(){
@@ -51,7 +49,6 @@ public class superCalculadora implements Calculadora {
 		//for (int i=0;i<largoCad;i++){
 		//	cadena=cadena + obj.pop();	
 		//}
-		cadena= "254+*4++";
 		//for (int i=0;i<7;i++){
 			//try {
 					//numCambiar = Integer.parseInt(cadena.substring(i,i+1));
@@ -67,7 +64,7 @@ public class superCalculadora implements Calculadora {
 			//System.out.println("Putos");
 			//return false;
 		//}
-		for (int i=0;i<8;i++){ //Aqui cambias largo de la cadena
+		for (int i=0;i<largoCad;i++){ //Aqui cambias largo de la cadena
 			switch (cadena.charAt(i)){
 				case '0':{
 					numCambiar = Integer.parseInt(cadena.substring(i,i+1));
